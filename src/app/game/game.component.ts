@@ -19,23 +19,6 @@ export class GameComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.cards = [
-      {
-        name: 'Teste',
-        imageUrl: 'aaa',
-        day: 1,
-        month: 1,
-        year: 2000,
-      },
-      {
-        name: 'Teste2',
-        imageUrl: 'aaa',
-        day: 1,
-        month: 1,
-        year: 2010,
-      },
-    ];
-
     this.cards = timeCards;
     this.getCards();
   }
@@ -71,7 +54,7 @@ export class GameComponent implements OnInit {
   }
 
   shareTwitter() {
-    const url = `http://twitter.com/share?text=I managed to put ${this.points} Time's in the right time order. Can you get more than me?&url=http://aaaaa&hashtags=timingtime, 1hgj`;
+    const url = `http://twitter.com/share?text=I managed to put ${this.points} Times in the right time order. Can you get more than me?&url=https://gabtoschi.github.io/timingtime/&hashtags=timingtime, 1hgj`;
 
     window.open(url, '_blank');
   }
