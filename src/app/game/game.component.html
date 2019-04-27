@@ -1,0 +1,47 @@
+<div class="mt-4 container">
+  <ng-container *ngIf="!endGame">
+    <div class="row mb-3">
+      <div class="card text-center text-white bg-primary col-12 col-md-4 offset-md-4">
+        <div class="card-body">
+          <div class="card-title">
+            <h4>Points: {{ points }}</h4>
+          </div>
+          <p>What of this Times came first in time?</p> 
+        </div>
+      </div>
+    </div>
+  
+    <div class="row">
+      <div class="card bg-light text-center col-12 col-md-4 offset-md-2">
+        <img [src]="leftCard.imageUrl" class="card-img-top img-fluid">
+        <div class="card-body">
+          <h5 class="card-title">{{ leftCard.name }}</h5>
+          <button (click)="chooseCard('left')" class="btn btn-primary">Choose this!</button>
+        </div>
+      </div>
+  
+      <div class="card bg-light text-center col-12 col-md-4">
+          <img [src]="rightCard.imageUrl" class="card-img-top img-fluid">
+          <div class="card-body">
+            <h5 class="card-title">{{ rightCard.name }}</h5>
+            <button (click)="chooseCard('right')" class="btn btn-primary">Choose this!</button>
+          </div>
+        </div>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="endGame">
+    <div class="row mb-3">
+      <div class="card text-center text-white bg-danger col-12 col-md-4 offset-md-4">
+        <div class="card-body">
+          <div class="card-title"><h4>Game Over!</h4></div>
+          <p>You made {{ points }} points! I hope you had a great... time! :)</p>
+
+          <button (click)="shareTwitter()" class="btn btn-light mb-2">Share on Twitter</button><br>
+          <button (click)="reset()" class="btn btn-light">Play Again</button>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</div>
+
